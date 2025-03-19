@@ -38,7 +38,7 @@ jobs:
       -
         name: Run Buildx
         env: 
-          GITHUB_REPO: binetsky/netshoot
+          GITHUB_REPO: binetsky/game2048
         run: |
           docker buildx build \
             --platform linux/amd64,linux/arm64 \
