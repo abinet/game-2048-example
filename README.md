@@ -2,8 +2,6 @@
 
 Sample javascript application implementing the classic [2048 game](https://en.wikipedia.org/wiki/2048_(video_game)). Main project is based on the [game-2048 library](https://www.npmjs.com/package/game-2048) and [Webpack](https://webpack.js.org).
 
-Main purpose is to serve as a demo for the [DOKS-CI-CD](https://github.com/digitalocean/container-blueprints/tree/main/DOKS-CI-CD) blueprint.
-
 ## Requirements
 
 To complete all steps and deploy the `2048-game` sample application, you will need:
