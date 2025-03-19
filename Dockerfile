@@ -1,4 +1,4 @@
-FROM node:16-slim AS builder
+FROM node:23-slim AS builder
 WORKDIR /usr/src/app
 COPY . .
 RUN npm install --include=dev
@@ -9,7 +9,7 @@ RUN npm install --include=dev
 ENV NODE_ENV=development
 RUN npm run build
 
-FROM node:16-slim
+FROM node:23-slim
 RUN npm install http-server -g
 RUN mkdir /public
 WORKDIR /public
