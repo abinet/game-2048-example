@@ -9,11 +9,12 @@ RUN npm install --include=dev
 ENV NODE_ENV=development
 RUN npm run build
 
-FROM node:23-slim
-RUN npm install http-server -g
-RUN mkdir /public
-WORKDIR /public
-COPY --from=builder /usr/src/app/dist/ ./
-EXPOSE 8080
-USER 1000
-CMD ["http-server"]
+FROM nginx:latest
+
+# Copy built files from the build stage to the production image
+WORKDIR /usr/share/nginx/html
+COPY --from=builder /usr/src/app/dist ./
+# Other configurations, if needed
+
+# Container startup command for the web server (nginx in this case)
+CMD ["nginx", "-g", "daemon off;"]
